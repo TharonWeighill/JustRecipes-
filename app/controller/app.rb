@@ -1,27 +1,32 @@
 class ApplicationController < Sinatra::Base
-    # set :views, Proc.new { File.join(root
-    # , "../views") }
+    set :views, Proc.new { File.join(root, "../views") }
 
-    get '/' do
-      erb :home 
-    end
+#     get '/' do
+#       erb :home 
+#     end
 
-    get '/newuser' do
-      erb :newuser
-    end
+#     get '/user/signup' do
+#       erb :newuser
+#     end
 
-    get '/user/:id' do
-      erb :user
-    end
+#     get '/user/:id' do
+#       erb :user
+#     end
 
-    get '/createrecipe' do
-      erb :createrecipe
-    end
-
-    get '/recipe/:id' do
-      erb :recipe
-    end
+#     get '/recipe/newrecipe' do
+#       erb :newrecipe 
+#     end
+    
+#     get '/recipe/:id' do
+#       erb :recipe
+#     end
   
+#     get '/myrecipes/:id' do
+#       erb :myrecipes      
+#     end
   
-  end 
+#     get '/recipe/:id/comment/:id' do
+#       erb :recipecomment
+#     end 
+  
 end 
