@@ -1,6 +1,5 @@
-class UserController < ApplicationController
-    post '/users' do
-        @user = params["user"]
-        erb :users
+class Users_Controller < ApplicationController
+    get '/users' do
+       "hello chef"
     end
 end 
