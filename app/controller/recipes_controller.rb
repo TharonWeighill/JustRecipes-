@@ -1,11 +1,13 @@
 class Recipes_Controller < ApplicationController
-    get '/recipes' do 
-        @recipes = Recipes.all
-        erb :"recipes/index" 
-    end 
-
+    set :views, Proc.new { File.join(root, "../views/recipes") }
+   
+    get '/recipes' do
+        @recipes = Recipe.all
+        erb :index
+    end
 
     get '/recipes/new' do
+        erb :new
         
     end
 
