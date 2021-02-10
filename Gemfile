@@ -13,6 +13,8 @@ gem 'sinatra'
   gem 'sinatra-activerecord' , :require => 'sinatra/activerecord'
   gem 'rake'
   gem 'bcrypt'
+  gem 'email_validater'
+  gem 'dotenv'
 
   group :development do
     gem 'shotgun'
