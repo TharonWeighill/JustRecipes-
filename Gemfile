@@ -9,13 +9,20 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem 'sinatra'
   gem 'thin'
   gem 'require_all'
-  gem 'activerecord', '5.2'
-  gem 'sinatra-activerecord'
+  gem 'activerecord', '5.2' , :require =>'active_record'
+  gem 'sinatra-activerecord' , :require => 'sinatra/activerecord'
   gem 'rake'
+  gem 'bcrypt'
 
   group :development do
     gem 'shotgun'
-    gem 'pry'
     gem 'tux'
+    gem 'pry'
     gem 'sqlite3', '~> 1.3.6'
   end 
+    
+    
+  group :test do
+    gem 'corneal'
+    gem 'capybara'
+  end
