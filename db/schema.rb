@@ -36,13 +36,17 @@ ActiveRecord::Schema.define(version: 2021_02_09_191348) do
     t.text "directions"
     t.integer "difficulty"
     t.string "cuisine"
+    t.string "foodpic"
     t.integer "users_id"
     t.index ["users_id"], name: "index_recipes_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "email"
+    t.string "password"
     t.text "about"
+    t.string "avatar"
   end
 
 end
