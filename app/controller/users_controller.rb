@@ -1,4 +1,3 @@
-
 class Users_Controller < ApplicationController
   set :views, Proc.new { File.join(root, "../views/users") }
   
@@ -7,8 +6,7 @@ class Users_Controller < ApplicationController
     @users = User.all
     erb :index
   end
-  
-  
+    
   #route to create user / has a form to create new user
   get '/users/new' do
     erb :new
@@ -19,13 +17,11 @@ class Users_Controller < ApplicationController
     user = User.create(username: params["username"], about: params["about"] )
     redirect "/users/#{user.id}"
   end
-
-  
-  
+    
   #show route for a single user
   get '/users/:id' do
-   @user = User.find_by(id: params[:id])
-   erb :show
+    @user = User.find_by(id: params[:id])
+    erb :show
   end
   
   #renders form to edit user
@@ -33,7 +29,6 @@ class Users_Controller < ApplicationController
     @user = User.find_by(id: params[:id])
     erb :edit
   end 
-  
   
   #update user
   patch '/users/:id/edit' do
