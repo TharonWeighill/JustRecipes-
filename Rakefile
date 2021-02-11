@@ -2,7 +2,7 @@ require './config/environment'
 require 'sinatra/activerecord/rake' 
 
 task :env do
-        require "./config/environment"
+    require "./config/environment"
 end
 
 

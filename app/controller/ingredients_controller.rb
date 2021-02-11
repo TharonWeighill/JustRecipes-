@@ -1,2 +1,2 @@
-class Ingredients_controller < ApplicationController
+class Ingredients_Controller < ApplicationController
 end 
