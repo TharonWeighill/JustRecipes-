@@ -19,6 +19,8 @@ class Users_Controller < ApplicationController
     user = User.create(username: params["username"], about: params["about"] )
     redirect "/users/#{user.id}"
   end
+
+  
   
   #show route for a single user
   get '/users/:id' do

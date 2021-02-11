@@ -1,6 +1,6 @@
-<h1>Recipes</h1>
-<ul>
-    <% @recipes.each do |n| %>
-        <li><%= n.recipe_name %></li>
-    <% end %>
-</ul>
+<h1>Choose your next great meal!</h1>
+
+<%@recipes.each do |n| %>
+    <li><a href="/recipes/<%= n.id %>"><%= n.recipe_name %></a></li>
+<p><%= n.foodpic %></p>
+<%end%>

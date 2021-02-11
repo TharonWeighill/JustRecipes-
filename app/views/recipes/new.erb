@@ -1,7 +1,12 @@
 <h1>Create a Recipe</h1>
 
-<form action="/recipes" method="post">
-    <input type="text" name="recipe_name">
-    <textarea name="directions" ></textarea>
-    <input type="submit" value="create recipe">
+<form action="/recipes/id" method="post">
+    <input type="hidden" value= "PATCH" name="_method">
+    <p><input type="string" name="recipe_name"></p>
+    <p><input type="string" name="foodpic"></p>
+    <p><input type="integer" name="difficulty"></p>
+    <p><input type="string" name="cuisine"></p>
+    <p><input type="text" name="directions"></p>
+    <input type="submit">
 </form>
+
