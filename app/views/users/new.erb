@@ -1,11 +1,11 @@
 <h1>Create a Profile</h1>
 
-<form action="/users/show" method="post">
+<form action="/users/id" method="post">
     <p><input type="string" name="avatar" placeholder="upload photo"></p>
     <p><input type="string" name="username" placeholder="username"></p>
-    <p><input type="string" name="email" placeholder="email"></p>
-    <p><input type="string" name="password" placeholder="password"></p>
-    <p><textarea name="about" placeholer="Tell us about yourself" ></textarea></p>
+    <%# <p><input type="string" name="email" placeholder="email"></p>
+    <p><input type="string" name="password" placeholder="password"></p> %>
+    <p><textarea name="about" value="Tell us about yourself" ></textarea></p>
     <p><input type="submit" value="create user"></p>
 </form>
 

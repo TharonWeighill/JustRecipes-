@@ -26,19 +26,23 @@ class Users_Controller < ApplicationController
    erb :show
   end
   
+  #renders form to edit user
+  get '/users/:id/edit' do
+    @user = User.find_by(id: params[:id])
+    erb :edit
+  end 
+  
   
   #update user
-  patch '/users/:id' do
+  patch '/users/:id/edit' do
+    user = User.find_by(id: params[:id])
+    user.update(avatar: params["avatar"], about: params["about"])
+    redirect "/users/#{user.id}"
     end 
     
   #delete existing user
   delete '/users/:id' do
   end
-    
-  #renders form to edit user
-  get '/users/:id/edit' do
-    erb :edit
-  end 
     
 end 
   
