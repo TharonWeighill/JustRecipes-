@@ -2,8 +2,8 @@
 
 <form action="/users/<%= @user.id %>" method="POST">
     <input type="hidden" value= "PATCH" name="_method">
-    <p><input type="string" name="avatar" placeholder="upload photo"></p>
-    <p><textarea name="about"></textarea></p>
+    <p><input type="string" name="avatar"></p>
+    <p><input type="text" name="about"></p>
     <input type="submit">
 </form>
 

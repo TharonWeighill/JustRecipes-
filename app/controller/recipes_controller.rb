@@ -1,51 +1,53 @@
-class Users_Controller < ApplicationController
+ class Recipes_Controller < ApplicationController
   set :views, Proc.new { File.join(root, "../views/recipes") }
-    
-  #renders all recipes
+  
+
+  #route to all recipes
   get '/recipes' do
-    @recipe = Recipe.all
+    @recipes = Recipe.all
     erb :index
   end
-
-  #renders a single recipe
+  
+  #route to create recipe / has a form to create new recipe
+  get '/recipes/new' do
+    erb :new
+  end
+  
+  #show route for a single recipe
   get '/recipes/:id' do
     @recipe = Recipe.find_by(id: params[:id])
     erb :show
   end
-    
-  #renders a form to create a new recipe
-  get '/recipes/new' do
-    erb :new
-  end
-    
-  #creates a new recipe
+ 
+  #create recipe
   post '/recipes' do
-    recipe = Recipe.create(recipe_name: params["recipe_name"], directions: params["directions"],
-    difficulty: params["difficulty"], cuisine: params["cuisine"], foodpic: params ["foodpic"])
+    recipe = Recipe.create(params["recipe_name"])
     redirect "/recipes/#{recipe.id}"
   end
-    
-  #renders form to edit a recipe
+  
+
+  #renders form to edit recipe
   get '/recipes/:id/edit' do
-    @recipes = Recipe.find_by(id: params[:id])
+    @recipe = Recipe.find_by(id: params[:id])
     erb :edit
   end 
-    
-  #updates recipe
-  patch '/recipes/:id' do
+  
+  #update recipe
+  patch '/recipes/:id/edit' do
     recipe = Recipe.find_by(id: params[:id])
-    recipe.update(recipe_name: params["recipe_name"], directions: params["directions"],
-    difficulty: params["difficulty"], cuisine: params["cuisine"], foodpic: params ["foodpic"])
-    redirect "/recipes/#{user.id}"
-  end 
-      
-  #delete existing recipe
+    recipe.update(params["recipe_name"])
+    redirect "/recipes/#{recipe.id}"
+    end 
+    
+  #delete existing user
   delete '/recipes/:id' do
   end
-        
-end 
-      
     
+end 
+  
+  
+  
+
     
     
       

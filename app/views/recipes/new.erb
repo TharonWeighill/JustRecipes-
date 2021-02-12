@@ -1,12 +1,10 @@
 <h1>Create a Recipe</h1>
 
-<form action="/recipes/id" method="post">
-    <input type="hidden" value= "PATCH" name="_method">
-    <p><input type="string" name="recipe_name"></p>
-    <p><input type="string" name="foodpic"></p>
-    <p><input type="string" name="cuisine"></p>
-    <p><input type="integer" name="difficulty"></p>
-    <p><input type="text" name="directions"></p>
+<form action="/recipes" method="POST">
+    <p><input type="string" name="recipe_name[recipe_name]" placeholder="Recipe Name"></p>
+    <p><input type="string" name="recipe_name[foodpic]" placeholder="foodpic"></p>
+    <p><input type="string" name="recipe_name[cuisine]" placeholder="cuisine"></p>
+    <p><input type="integer" name="recipe_name[difficulty]"placeholder="difficulty"></p>
+    <p><input type="text" name="recipe_name [directions]"placeholder="directions"></p>
     <input type="submit">
 </form>
-
