@@ -1,5 +1,6 @@
 class Users_Controller < ApplicationController
   set :views, Proc.new { File.join(root, "../views/users") }
+   
   
   #route to all users 
   get '/users' do
@@ -20,7 +21,7 @@ class Users_Controller < ApplicationController
  
   #create user
   post '/users' do
-    user = User.create(params["username"] )
+    user = User.create(params["username"])
     redirect "/users/#{user.id}"
   end
   
