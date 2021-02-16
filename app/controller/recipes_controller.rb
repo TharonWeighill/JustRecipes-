@@ -17,7 +17,6 @@
   get '/recipes/:id' do
     @recipe = Recipe.find_by(id: params[:id])
     # @ingredient = Ingredient.find_by(id: params[:id])
-  @comment = Comment.find_by(id: params[:id])
     erb :show
   end
  
