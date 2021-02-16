@@ -5,6 +5,12 @@
 <p><%=@recipe.difficulty%></p>
 <p><%=@recipe.cuisine%></p>
 <p><%=@recipe.directions%></p>
+<p><%=@recipes.comments%></p>
 
 
-<p><a href="<%=@recipe.id%>/comment">Leave a Comment</a></p>
+<h1>Leave a comment</h1>
+
+
+<form action="/recipes/<%=@recipe.id%>" method="POST">
+    <p><input type="text" name="comment[comment]" placeholder="Enter Comment"></p>
+</form>

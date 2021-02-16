@@ -1,8 +1,8 @@
 require "./config/environment"
 use Rack::MethodOverride
 use ApplicationController
-use Users_Controller
 use SessionsController
+use Users_Controller
 use Recipes_Controller
 
 

@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+21# frozen_string_literal: true
 
 source "https://rubygems.org"
 
@@ -12,7 +12,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
   gem 'activerecord', '5.2' , :require =>'active_record'
   gem 'sinatra-activerecord' , :require => 'sinatra/activerecord'
   gem 'rake'
-  gem 'bcrypt'
+  # gem 'bcrypt'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'carrierwave'
 
@@ -24,7 +24,6 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
   end 
     
     
-  group :test do
-    # gem 'corneal'
-    # gem 'capybara'
+  gem 'corneal'
+
   end
