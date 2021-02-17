@@ -1,0 +1,21 @@
+
+<div class="card" style="width: 18rem;">
+  <%# <img src= <%=@recipe.food_pic class="card-img-top" alt="..."> %> %>
+  <div class="card-body">
+    <h5 class="card-title"> <%=@recipe.recipe_name%></h5>
+    <p class="card-text"> difficulty: <%@recipe.difficulty%> </p>
+    <a href="/recipes/<%=@recipe.id%>" class="btn btn-primary">View Recipe</a>
+  </div>
+</div>
+
+
+<h1>Leave a comment</h1>
+
+
+<form action="/comments" method="post">
+
+    <input type="text" name="textbody">
+    <input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
+    <input type="submit" value="Comment">
+</form>
+

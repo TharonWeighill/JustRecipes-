@@ -13,19 +13,21 @@
   end 
 
 
-  # helpers do
-  #   def current_user
-  #   @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  #   end
+  helpers do
+    def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
 
-  #   def logged_in?
-  #     !!@current_user
-  #   end 
+    def logged_in?
+      !!@current_user
+    end 
 
-  #   def recipe_owner?(recipe)
-  #     if current_user != recipe.user
-  #       redirect  
+    def recipe_owner?(recipe)
+      if current_user != recipe.user
+        redirect 
+      end 
+    end 
    
-  # end
+  end
 
 end

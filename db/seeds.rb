@@ -4,6 +4,6 @@
 end 
 
 20.times do
-    Recipe.create(recipe_name: Faker::Food.dish, directions: Faker::Food.description, difficulty: Faker::Number.between(from:1, to: 10,), foodpic: Faker::LoremFlickr.image,
+    Recipe.create(recipe_name: Faker::Food.dish, directions: Faker::Food.description, difficulty: Faker::Number.between(from:1, to: 10,), avatar: Faker::LoremFlickr.image,
     cuisine: Faker::Restaurant.type,) #users_id: Faker::Number.between(from:1, to: 20,))
 end
