@@ -12,16 +12,16 @@ class Users_Controller < ApplicationController
     erb :new
   end
   
-  #show route for a single user
-  get '/users/:id' do
-    @user = User.find_by(id: params[:id])
-    erb :show
-  end
-  
   #create user
   post '/users' do
     user = User.create(params["username"])
     redirect "/users/#{user.id}"
+  end
+  
+  #show route for a single user
+  get '/users/:id' do
+    @user = User.find_by(id: params[:id])
+    erb :show
   end
   
 

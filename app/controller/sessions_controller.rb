@@ -3,6 +3,7 @@ class SessionsController < Sinatra::Base
   
   #render loign 
   get "/" do
+  
     # redirect "/recipes" if logged_in?
     erb :home
   end 
