@@ -22,6 +22,7 @@ class Users_Controller < ApplicationController
   
   #show route for a single user
   get '/users/:id' do
+    redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
     erb :show
   end
@@ -34,6 +35,7 @@ class Users_Controller < ApplicationController
   
   #renders form to edit user
   get '/users/:id/edit' do
+    redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
     erb :edit
   end 
