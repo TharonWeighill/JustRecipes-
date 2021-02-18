@@ -16,6 +16,7 @@ gem 'bcrypt'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'carrierwave'
 gem 'dotenv'
+gem 'sinatra-flash'
 
 group :development do
   gem 'shotgun'

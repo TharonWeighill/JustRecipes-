@@ -2,10 +2,9 @@ class SessionsController < Sinatra::Base
   set :views, Proc.new { File.join(root, "../views") }
   
   #render loign 
-  get "/" do
-  
-    # redirect "/recipes" if logged_in?
-    erb :home
+  get "/login" do
+    redirect "/recipes" if logged_in?
+    erb :login
   end 
       
   #login user

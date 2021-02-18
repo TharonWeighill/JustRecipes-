@@ -10,7 +10,14 @@ class Users_Controller < ApplicationController
   #create user
   post '/signup' do
     user = User.create(params["username"])
-    redirect "/users/#{user.id}"
+    if user.valid?
+      flash[:success] = "User Created!"
+      session["user_id"] = user.id
+      redirect '/users/#{user.id}'
+    else 
+      flash[:error] = "Sorry that didn't work"
+      redirect '/signup'
+    end 
   end
   
   #show route for a single user
