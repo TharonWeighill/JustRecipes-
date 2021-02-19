@@ -1,17 +1,39 @@
 <h2>Edit Your Recipe</h2>
 
-<form action="/recipes/<%= @recipe.id %>" method="POST">
-    <input type="hidden" value= "PATCH" name="_method">
-    <p><input type="string" name="recipe_name [recipe_name]"></p>
-    <p><input type="string" name="recipe_name [foodpic]"></p>
-    <p><input type="string" name="recipe_name [cuisine]"></p>
-    <p><input type="integer" name="recipe_name [difficulty]"></p>
-    <p><input type="text" name="recipe_name [directions]"></p>
-    <input type="submit">
-</form>
-
+<div class="form-container">
+   <form action="/recipes/<%= @recipe.id %>" method="POST">
+        <div class="form-control">
+            <label for="recipe_name">Name</label>
+            <input type="string" name="recipe_name[recipe_name]" required>
+        </div>
+        <div class="form-control">
+            <label for="cuisine">Cuisine</label>
+             <input type="string" name="recipe_name[cuisine]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="difficulty">Difficulty</label>
+             <input type="string" name="recipe_name[difficulty]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="directions">Directions</label>
+             <input type="text" name="recipe_name[directions]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="avatar">Foodpic</label>
+             <input type="file" name="recipe_name[avatar]" required>
+             </div>
+        </div>
+        <input type="submit">
+    </form>
+</div>
 
 <form method="DELETE" action="/users/<%= @recipe.id %>% "> 
     <input type="hidden" value= "DELETE" name="_method">
     <input type ="submit" value="delete recipe">
 </form>
+
+
+
