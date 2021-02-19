@@ -10,7 +10,7 @@
   
   #route to create recipe / has a form to create new recipe
   get '/recipes/new' do
-    redirect_if_not_logged_in
+    # redirect_if_not_logged_in
     erb :new
   end
   
@@ -31,7 +31,7 @@
 
   #renders form to edit recipe
   get '/recipes/:id/edit' do
-    redirect_if_not_logged_in
+    # redirect_if_not_logged_in
     @recipe = Recipe.find_by(id: params[:id])
     erb :edit
   end 

@@ -1,5 +1,5 @@
+
 class ApplicationController < Sinatra::Base
-  set :views, Proc.new { File.join(root, "../views") }
 
   configure do 
     set :views, 'app/views'
@@ -13,10 +13,11 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/" do
+    
     redirect "/recipes" if logged_in?
     erb :home
   end 
-      
+
 
   helpers do
     
@@ -34,13 +35,16 @@ class ApplicationController < Sinatra::Base
       end
     end
 
+    def recipe_owner?(recipe)
+      if current_user != recipe.user
+        flash[:error] = "Sorry, that recipe doesn't belong to you!" 
+      end 
+    end
 
-    # def recipe_owner?(recipe)
-    #   if current_user != recipe.user
-    #     redirect 
-    #   end 
-    # end 
-   
-  end
-
+    def comment_owner?(comment)
+      if current_user != comment.user
+        flash[:error] = "Sorry, you can only edit your comments!"
+      end 
+    end 
+  end 
 end

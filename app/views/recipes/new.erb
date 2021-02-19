@@ -1,10 +1,32 @@
 <h1>Create a Recipe</h1>
 
-<form action="/recipes" method="POST">
-    <p><input type="string" name="recipe_name[recipe_name]" placeholder="Recipe Name"></p>
-    <p><input type="string" name="recipe_name[foodpic]" placeholder="foodpic"></p>
-    <p><input type="string" name="recipe_name[cuisine]" placeholder="cuisine"></p>
-    <p><input type="integer" name="recipe_name[difficulty]"placeholder="difficulty"></p>
-    <p><input type="text" name="recipe_name [directions]"placeholder="directions"></p>
-    <input type="submit">
-</form>
+
+<div class="form-container">
+    <form action="/recipes" method="post">
+        <div class="form-control">
+            <label for="recipe_name">Name</label>
+            <input type="string" name="recipe_name[recipe_name]" required>
+        </div>
+        <div class="form-control">
+            <label for="cuisine">Cuisine</label>
+             <input type="string" name="recipe_name[cuisine]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="difficulty">Difficulty</label>
+             <input type="string" name="recipe_name[difficulty]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="directions">Directions</label>
+             <input type="text" name="recipe_name[directions]" required>
+             </div>
+        </div>
+        <div class="form-control">
+            <label for="avatar">Foodpic</label>
+             <input type="file" name="recipe_name[avatar]" required>
+             </div>
+        </div>
+        <input type="submit">
+    </form>
+</div>

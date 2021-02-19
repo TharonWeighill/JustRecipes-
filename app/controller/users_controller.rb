@@ -1,6 +1,11 @@
 class Users_Controller < ApplicationController
   set :views, Proc.new { File.join(root, "../views/users") }
   
+  #route to all users 
+  get '/users' do
+    @users = User.all
+    erb :index
+  end
   
   #route to create user / has a form to create new user
   get '/signup' do
@@ -9,11 +14,12 @@ class Users_Controller < ApplicationController
   
   #create user
   post '/signup' do
-    user = User.create(params["username"])
+    
+    user = User.create(params["user"])
     if user.valid?
       flash[:success] = "User Created!"
       session["user_id"] = user.id
-      redirect '/users/#{user.id}'
+      redirect "/users/#{user.id}"
     else 
       flash[:error] = "Sorry that didn't work"
       redirect '/signup'
@@ -22,20 +28,15 @@ class Users_Controller < ApplicationController
   
   #show route for a single user
   get '/users/:id' do
-    redirect_if_not_logged_in
+    # redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
     erb :show
   end
   
-  #route to all users 
-  get '/users' do
-    @users = User.all
-    erb :index
-  end
   
   #renders form to edit user
   get '/users/:id/edit' do
-    redirect_if_not_logged_in
+    # redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
     erb :edit
   end 
