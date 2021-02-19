@@ -6,6 +6,12 @@ class Users_Controller < ApplicationController
     @users = User.all
     erb :index
   end
+  #show route for a single user
+  get '/users/:id' do
+    # redirect_if_not_logged_in
+    @user = User.find_by(id: params[:id])
+    erb :show
+  end
   
   #route to create user / has a form to create new user
   get '/signup' do
@@ -14,26 +20,18 @@ class Users_Controller < ApplicationController
   
   #create user
   post '/signup' do
-    
+  
     user = User.create(params["user"])
     if user.valid?
       flash[:success] = "User Created!"
       session["user_id"] = user.id
       redirect "/users/#{user.id}"
     else 
-      flash[:error] = "Sorry that didn't work"
+      flash[:error] = user.errors.full_messages.to_sentence 
       redirect '/signup'
     end 
   end
-  
-  #show route for a single user
-  get '/users/:id' do
-    # redirect_if_not_logged_in
-    @user = User.find_by(id: params[:id])
-    erb :show
-  end
-  
-  
+    
   #renders form to edit user
   get '/users/:id/edit' do
     # redirect_if_not_logged_in
@@ -42,14 +40,18 @@ class Users_Controller < ApplicationController
   end 
   
   #update user
-  patch '/users/:id/edit' do
+  patch '/users/:id' do
     user = User.find_by(id: params[:id])
-    user.update(params["username"])
+    user.update
     redirect "/users/#{user.id}"
-    end 
+  end 
     
   #delete existing user
   delete '/users/:id' do
+    user = User.find_by(id: params[:id])
+    user.delete 
+    redirect "/"
+  
   end
     
 end 

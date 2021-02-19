@@ -17,7 +17,7 @@
   #show route for a single recipe
   get '/recipes/:id' do
     @recipe = Recipe.find_by(id: params[:id])
-    # @ingredient = Ingredient.find_by(id: params[:id])
+    @comments=@recipe.comments
     erb :show
   end
  
