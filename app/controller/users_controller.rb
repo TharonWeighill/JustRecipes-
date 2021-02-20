@@ -42,14 +42,14 @@ class Users_Controller < ApplicationController
   #update user
   patch '/users/:id' do
     user = User.find_by(id: params[:id])
-    user.update
+    user.update(@params["user"])
     redirect "/users/#{user.id}"
   end 
     
   #delete existing user
   delete '/users/:id' do
     user = User.find_by(id: params[:id])
-    user.delete 
+    user.delete
     redirect "/"
   
   end
