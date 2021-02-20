@@ -5,6 +5,7 @@ use SessionsController
 use Users_Controller
 use Recipes_Controller
 use CommentsController
+use IngredientController
 
 
 
