@@ -17,14 +17,15 @@
   #show route for a single recipe
   get '/recipes/:id' do
     @recipe = Recipe.find_by(id: params[:id])
-    @comments=@recipe.comments
-    # @ingredients=@recipe.ingredients
+    @ingredients = Ingredient.find_by(id: params[:id])
+    @comments = @recipe.comments
     erb :show
   end
  
   #create recipe
   post '/recipes' do
     recipe = Recipe.create(params["recipe"])
+    @ingredients = Ingredient.create(params["ingredients"])
     redirect "/recipes/#{recipe.id}"
   end
   
