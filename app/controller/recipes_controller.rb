@@ -17,7 +17,7 @@
   #show route for a single recipe
   get '/recipes/:id' do
     @recipe = Recipe.find_by(id: params[:id])
-    @ingredients = Ingredient.find_by(id: params[:id])
+    @ingredients = @recipe.ingredients #Ingredient.find_by(id: params[:id])
     @comments = @recipe.comments
     erb :show
   end
@@ -46,6 +46,9 @@
     
   #delete existing user
   delete '/recipes/:id' do
+    recipe = Recipe.find_by(id: params[:id])
+    recipe.delete
+    redirect "/"
   end
     
 end 

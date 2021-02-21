@@ -5,7 +5,8 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 
 require 'dotenv/load'
 require 'sinatra/flash'
-
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 
 configure :development do
     set :database, 'sqlite3:db/database.db'
