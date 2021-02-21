@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
     validates :username, uniqueness:{:message => "Username already exists."}, length: {in: 5..30}
     validates :email, presence: true, uniqueness: true 
 
-    mount_uploaders :avatars, AvatarUploader
+    mount_uploaders :avatar, AvatarUploader
     serialize :avatars
 end
