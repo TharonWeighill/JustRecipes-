@@ -1,16 +1,20 @@
-<a href="<%=@recipe.id%>/edit">Edit Recipe</a>
 
-<h3><%= @recipe.recipe_name%></h3>
-<p><%=@recipe.avatar%></p>
-<p><%=@recipe.difficulty%></p>
-<p><%=@recipe.cuisine%></p>
-<p><%=@recipe.directions%></p>
-<p><%=@ingredients.value%></p>
+
+<div class="card" style="width: 18rem;">
+  <img src="<%=@recipe.avatar%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @recipe.recipe_name%></h5>
+    <%# <p class="card-text"><%=@ingredients.value%></p>
+    <p class="card-text"><%=@recipe.directions%></p>
+    <p class="card-text"><%=@recipe.difficulty%></p>
+   <a href="<%=@recipe.id%>/edit">Edit Recipe</a>
+  </div>
+</div>
+
+
 
 
 <h1>Leave a comment</h1>
-
-
 <form action="/comments" method="post">
     <input type="text" name="textbody">
     <input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
@@ -19,6 +23,6 @@
 
  <% if @comments.size > 0 %> 
     <% @comments.each do |c| %> 
-        <p> <%=c.textbody%></p> <br>
+        <p><%=c.textbody%></p> <br>
     <%end%>
 <%end%>

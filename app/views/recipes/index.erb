@@ -1,6 +1,13 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 <h1>Choose your next great meal!</h1>
+
 
 <%@recipes.each do |n| %>
     <li><a href="/recipes/<%= n.id %>"><%= n.recipe_name %></a></li>
-<p><%= n.avatar%></p>
+    <div class="text-center">
+  <img src= "<%= n.avatar %>" class="rounded" alt="...">
+</div>
+
+
 <%end%>

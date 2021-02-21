@@ -6,6 +6,7 @@ class Users_Controller < ApplicationController
     @users = User.all
     erb :index
   end
+
   #show route for a single user
   get '/users/:id' do
     # redirect_if_not_logged_in
@@ -20,7 +21,6 @@ class Users_Controller < ApplicationController
   
   #create user
   post '/signup' do
-  
     user = User.create(params["user"])
     if user.valid?
       flash[:success] = "User Created!"
