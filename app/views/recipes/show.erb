@@ -5,7 +5,7 @@
   <img src="<%=@recipe.avatar%>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= @recipe.recipe_name%></h5>
-    <%# <p class="card-text"><%=@ingredients.value%></p>
+    <p class="card-text"><%=@ingredients.map(&:value).join(", ")%></p>
     <p class="card-text"><%=@recipe.directions%></p>
     <p class="card-text"><%=@recipe.difficulty%></p>
    <a href="<%=@recipe.id%>/edit">Edit Recipe</a>

@@ -4,6 +4,6 @@ class Recipe < ActiveRecord::Base
     has_many :ingredient_recipes
     has_many :ingredients, through: :ingredient_recipes
 
-    mount_uploaders :avatars, AvatarUploader
-    serialize :avatars
+    mount_uploader :avatar, AvatarUploader
+    #serialize :avatars
 end 

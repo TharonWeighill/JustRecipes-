@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
     validates :email, presence: true, uniqueness: true 
 
     mount_uploaders :avatar, AvatarUploader
-    serialize :avatars
+    
 end

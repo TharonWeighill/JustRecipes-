@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_191348) do
     t.integer "difficulty"
     t.string "cuisine"
     t.string "avatar"
-    t.integer "users_id"
-    t.index ["users_id"], name: "index_recipes_on_users_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

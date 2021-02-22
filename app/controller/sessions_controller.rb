@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Successfully logged in!"
       redirect "/users/#{user.id}"
     else
-      flash[:error] = user.errors.messages
+      flash[:error] = "invalid credentials"
       redirect '/' 
     end
   end

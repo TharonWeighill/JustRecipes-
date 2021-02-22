@@ -4,7 +4,7 @@
 
 
 <div class="form-container">
-    <form action="/recipes" method="post">
+    <form action="/recipes" method="post" enctype="multipart/form-data">
         <div class="form-control">
             <label for="recipe_name">Name</label>
             <input type="string" name="recipe[recipe_name]" required>
@@ -26,10 +26,26 @@
         </div>
         <div class="form-control">
             <label for="avatar">Picture</label>
-            <input type="file" name="recipe[avatar]" required>
+            <input type="file" name="avatar" required>
         </div>
             <label for="value">Ingredients</label>
-            <textarea rows="5" cols="50" name="ingredients[value]" type="text" required></textarea>
+            <label> Existing ingredients</label>
+            <select name="ingredient" id="ingredient">
+            <% Ingredient.all.each do |n|%>
+
+            <option value="<%=n.value%>"><%=n.value%></option>
+            <%end%>
+
+</select>
+           <input type="text" name="ingredients[][name]" required>
+           <input type="text" name="ingredients[][value]" required>
+           <br>
+           <input type="text" name="ingredients[][name]" required>
+           <input type="text" name="ingredients[][value]" required>
+           <br>
+       <input type="text" name="ingredients[][name]" required>
+           <input type="text" name="ingredients[][value]" required>
+           <br>
         </div>
         <br />
         <input type="submit">
