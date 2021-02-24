@@ -9,8 +9,9 @@ class Users_Controller < ApplicationController
 
   #show route for a single user
   get '/users/:id' do
-    # redirect_if_not_logged_in
+    redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
+    @recipes = @user.recipes
     erb :show
   end
   

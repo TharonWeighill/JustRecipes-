@@ -5,21 +5,18 @@
 
 <h1>Choose your next great meal!</h1>
 <%@recipes.each do |n| %>
-<div class="col d-flex justify-content-center">
  <blockquote class="blockquote text-center">  
+<div class="col d-flex justify-content-center">
     <div class="card" style="width: 18rem;">
+    <a href="/recipes/<%=n.id%>">
       <img src="<%=n.avatar%>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"> <%=n.recipe_name%></h5>
-          <p class="card-text"><%=n.cuisine%></p>
-          <p class="card-text"> difficulty: <%n.difficulty%></p>
-          <a href="/recipes/<%=n.id%>" class="btn btn-primary">View Recipe</a>
           <div class="fixed-bottom">
-                <div class="form-group">
-                  <img src="http://www.uwyo.edu/foods/_files/images/masthead/header-dancing-food.jpg" class="img-fluid" >
-                              </div>
+            <div class="form-group">
+            </div>
+          </div>
         </div>
-    </div>
   </blockquote>
 </div>
 <%end%>

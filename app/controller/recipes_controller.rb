@@ -25,13 +25,14 @@
   #create recipe
   post '/recipes' do
     redirect_if_not_logged_in
-  
     recipe = current_user.recipes.build(params["recipe"])
     recipe.avatar = params["avatar"]
     if recipe.save
       params["ingredients"].each do |hash|
-        ingredient= Ingredient.find_or_create_by(value: hash["name"].capitalize)
-        IngredientRecipe.create(ingredient: ingredient, recipe: recipe, value: hash["value"])
+        if hash["name"] != ""
+          ingredient= Ingredient.find_or_create_by(value: hash["name"].capitalize)
+          IngredientRecipe.create(ingredient: ingredient, recipe: recipe, value: hash["value"])
+        end
       end
       redirect "/recipes/#{recipe.id}"
     else 
