@@ -4,7 +4,7 @@
 <h2>Edit Your Recipe</h2>
 
 <div class="form-container">
-   <form action="/recipes/<%= @recipe.id %>" method="POST">
+   <form action="/recipes/<%= @recipe.id %>" method="POST"  enctype="multipart/form-data>
         <div class="form-control">
             <label for="recipe_name">Name</label>
             <input type="string" name="recipe[recipe_name]" required>
@@ -37,9 +37,9 @@
     </form>
 </div>
 
-<form method="DELETE" action="/users/<%= @recipe.id %>% "> 
+<form method="POST" action="/recipes/<%=@recipe.id%>"> 
     <input type="hidden" value= "DELETE" name="_method">
-    <input type ="submit" value="delete recipe">
+    <input type ="submit" class="btn btn-danger" value="delete recipe">
 </form>
 
 

@@ -10,6 +10,15 @@ require 'carrierwave/orm/activerecord'
 
 configure :development do
     set :database, 'sqlite3:db/database.db'
-
 end 
+
+
+
+CarrierWave.configure do |config|
+    config.root = "app/public"
+  end
+
+
+
+  
 require_all 'app'

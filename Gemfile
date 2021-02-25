@@ -14,7 +14,7 @@ gem 'sinatra-activerecord' , :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'bcrypt'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-gem 'carrierwave'
+gem 'carrierwave', "~> 2.0"
 gem 'dotenv'
 gem 'sinatra-flash'
 

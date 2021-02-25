@@ -5,5 +5,4 @@ class Recipe < ActiveRecord::Base
     has_many :ingredients, through: :ingredient_recipes
 
     mount_uploader :avatar, AvatarUploader
-    #serialize :avatars
 end 
