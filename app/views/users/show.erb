@@ -37,7 +37,7 @@
                 <%@recipes.each do |r|%>
                 <div class="row">
                     <a href="/recipes/<%=r.id%>">
-                    <div class="col-lg-6 mb-2 pr-lg-1"><img src="<%r.avatar%>" class="img-fluid rounded shadow-sm">
+                    <div class="col-lg-6 mb-2 pr-lg-1"><img src="<%r.try(:avatar)%>" class="img-fluid rounded shadow-sm">
                 </div>
                 <%end%> 
             </div>

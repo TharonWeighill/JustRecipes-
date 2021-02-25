@@ -6,8 +6,23 @@
     <img src="https://fermentedconnections.com/wp-content/uploads/2018/07/food.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><%= @recipe.recipe_name%></h5>
-      <p class="card-text"><%=@recipe.ingredient_recipes.map(&:ingredient).join(", ")%></p>
-      <p class="card-text"><%=@recipe.ingredient_recipes.map(&:value).join(", ")%></p>
+  
+
+      <table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>dosage</th>
+  </tr>
+  <%@recipe.ingredients.each do |r|%>
+
+  <tr>
+    <td><%=r.ingredient%></td>
+    <td><%=r.value%></td>
+  </tr>
+  <%end%>
+</table>
+
+     
       <p class="card-text"><%=@recipe.directions%></p>
       <p class="card-text"><%=@recipe.difficulty%></p>
       

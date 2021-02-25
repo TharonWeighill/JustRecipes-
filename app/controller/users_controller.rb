@@ -50,7 +50,7 @@ class Users_Controller < ApplicationController
   #delete existing user
   delete '/users/:id' do
     user = User.find_by(id: params[:id])
-    user.delete
+    user.destroy
     session.clear
     redirect "/"
   
