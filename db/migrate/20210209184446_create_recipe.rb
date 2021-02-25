@@ -5,7 +5,6 @@ class  CreateRecipe < ActiveRecord::Migration[5.2]
       t.text :directions
       t.integer :difficulty 
       t.string :cuisine 
-      t.string :avatar
       t.references :user, foreign_key: {on_delete: :cascade}
     end 
   end

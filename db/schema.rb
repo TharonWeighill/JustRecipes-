@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_191348) do
     t.text "directions"
     t.integer "difficulty"
     t.string "cuisine"
-    t.string "avatar"
     t.integer "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_191348) do
     t.string "email"
     t.string "password_digest"
     t.text "about"
-    t.string "avatar"
   end
 
 end

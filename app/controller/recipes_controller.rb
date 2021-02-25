@@ -2,11 +2,11 @@
   set :views, Proc.new { File.join(root, "../views/recipes") }
   
 
-  #route to all recipes
-  get '/recipes' do
-    @recipes = Recipe.all
-    erb :index
-  end
+#route to all recipes
+get '/recipes' do
+  @recipes = Recipe.all
+  erb :index
+end
   
   #route to create recipe / has a form to create new recipe
   get '/recipes/new' do
