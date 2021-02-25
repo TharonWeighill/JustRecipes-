@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_191348) do
   end
 
   create_table "ingredients", force: :cascade do |t|
+    t.text "ingredient"
     t.text "value"
   end
 

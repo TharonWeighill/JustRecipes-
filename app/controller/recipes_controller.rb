@@ -10,7 +10,7 @@
   
   #route to create recipe / has a form to create new recipe
   get '/recipes/new' do
-    # redirect_if_not_logged_in
+    redirect_if_not_logged_in
     erb :new
   end
   
@@ -26,10 +26,9 @@
   post '/recipes' do
     redirect_if_not_logged_in
     recipe = current_user.recipes.build(params["recipe"])
-    recipe.avatar = params["avatar"]
-    if recipe.save
-      params["ingredients"].each do |hash|
-        if hash["name"] != ""
+      if recipe.save
+        params["ingredients"].each do |hash|
+      if hash["name"] != ""
           ingredient= Ingredient.find_or_create_by(value: hash["name"].capitalize)
           IngredientRecipe.create(ingredient: ingredient, recipe: recipe, value: hash["value"])
         end
