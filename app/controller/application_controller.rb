@@ -13,11 +13,13 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/" do
-    
     redirect "/recipes" if logged_in?
     erb :home
   end 
 
+  get "/666" do
+    erb :terms
+  end 
 
   helpers do
     

@@ -1,2 +1,2 @@
-# JustRecipes-
-JustRecipes 
+Welcome to the BETA version of MyRecipes! Within the BETA of this app you will be able to create your own profile to store your favorite recipes. You can view and comment on other user created recipes as well!
+Features to look forward to will be, Uploading recipe images! Ratings on recipes! Visual Index of all your amazing recipes!
