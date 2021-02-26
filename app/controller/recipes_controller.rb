@@ -57,12 +57,11 @@ class Recipes_Controller < ApplicationController
     if recipe.user != current_user 
       redirect "/recipes/#{recipe.id}" 
     end 
-  
     if recipe.update(params["recipe"])
       params["ingredients"].each do |hash|
-        if hash["name"] != ""
+        if hash["ingredient"] != ""
           ingredient= Ingredient.find_or_create_by(ingredient: hash["ingredient"].capitalize)
-          IngredientRecipe.find_or_create_by(ingredient: ingredient, recipe: recipe, value: hash["value"])
+          IngredientRecipe.find_or_create_by(ingredient: ingredient, recipe: recipe, value: hash["ingredient"])
         end
       end 
       redirect "/recipes/#{recipe.id}"
