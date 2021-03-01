@@ -65,9 +65,11 @@
     </div>
 </div>
 </blockquote>                   
+
+
 <blockquote class="blockquote text-center">  
-<form method="POST" action="/recipes/<%=@recipe.id%>"> 
-    <input type="hidden" value= "DELETE" name="_method">
-    <input type ="submit" class="btn btn-danger" value="delete recipe">
-</form>
+    <form method="POST" action="/recipes/<%=@recipe.id%>"> 
+        <input type="hidden" value= "DELETE" name="_method">
+        <input type ="submit" class="btn btn-danger" value="delete recipe">
+    </form>
 </blockquote>

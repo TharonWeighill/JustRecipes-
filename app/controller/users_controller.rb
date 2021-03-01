@@ -42,7 +42,7 @@ class Users_Controller < ApplicationController
   
   #update user
   patch '/users/:id' do
-    user = User.find_by(id: params[:id])
+    user = current_user
     user.update(params["user"])
     redirect "/users/#{user.id}"
   end 

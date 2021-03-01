@@ -1,40 +1,36 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-   <a href="/users/<%=current_user.id%>" class="btn btn-outline-primary">My Profile</a>
-    <a href="/recipes" class="btn btn-outline-primary">All Recipes</a>
-    <a href="/logout" class="btn btn-outline-primary">Logout</a>
+  <a href="/users/<%=current_user.id%>" class="btn btn-outline-primary">My Profile</a>
+  <a href="/recipes" class="btn btn-outline-primary">All Recipes</a>
+  <a href="/logout" class="btn btn-outline-primary">Logout</a>
 
 <div  class="col d-flex justify-content-center">
-<span class="border border-primary">
-  <div class="card" style="width: 30em;">
+  <span class="border border-primary">
+    <div class="card" style="width: 30em;">
       <h1 class="card-center"><%= @recipe.recipe_name%></h1>
-  
-    <img src="https://fermentedconnections.com/wp-content/uploads/2018/07/food.png" class="card-img-top" alt="...">
-    <div class="card-body">
-
-<table style="width: 100%">
-  <tr>
-    <th>Ingredient</th>
-    <th>Measurement</th>
-  </tr>
-  
-  <%@recipe.ingredients.each do |r|%>
-
-  <tr>
-    <td><%=r.ingredient%></td>
-    <td><%=r.value%></td>
-  </tr>
-  
-  <%end%>
-</table>
-
-     
-      <p class="card-text"><%=@recipe.directions%></p>
-      <p class="card-text"><%=@recipe.difficulty%></p>
-      
-       <a  class=" btn btn-block mybtn btn-primary tx-tfm" href="<%=@recipe.id%>/edit">Edit Recipe</a>
+      <img src="https://fermentedconnections.com/wp-content/uploads/2018/07/food.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <table style="width: 100%">
+          <tr>
+            <th>Ingredient</th>
+            <th>Measurement</th>
+          </tr> 
+          <%@recipe.ingredients.each do |r|%>
+          <tr>
+            <td><%=r.ingredient%></td>
+            <td><%=r.value%></td>
+          </tr>
+          <%end%>
+        </table>
+        <h5>Cooking Instructions</h5>
+        <br>
+        <p class="card-text"><%=@recipe.directions%></p>
+        <br>
+        <h5>Difficulty</h5>
+        <p class="card-text"><%=@recipe.difficulty%></p>
+        <a  class=" btn btn-block mybtn btn-primary tx-tfm" href="<%=@recipe.id%>/edit">Edit Recipe</a>
+      </div>
     </div>
-  </div>
-</span>
+  </span>
 </div>
 
 
